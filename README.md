@@ -111,8 +111,16 @@ Currently using Ubot Studio to get EMAILS from the URLS.
 Need something that will click the button, because without it the <div></div> with the emails won't show. 
 Sever-side Javascript?
 
-## Mail Automation
+### Mail Automation
 
 Ubot studio executable runs automatically sends mail.
 
 With Mail for Good and AWS SES, we can send the emails.
+
+### Usage 
+
+Using this application is against Craigslist's Terms of Service. 
+
+Highly recommend that this application should not be put into use. 
+
+If put into use, the automailer functionality should not be applied.
