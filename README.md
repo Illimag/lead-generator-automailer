@@ -117,7 +117,7 @@ Ubot studio executable runs automatically sends mail.
 
 With Mail for Good and AWS SES, we can send the emails.
 
-### Usage 
+## Usage 
 
 Using this application is against Craigslist's Terms of Service. 
 
