@@ -38,7 +38,7 @@ This Automation Software is UBOT Studio which is a pay to use software.
 
 Included is the compiled executable as well as the UBOT file.
 
-An explaination of the reasons for using a desktop automation software is included below.
+The reasoning behind this is that Craigslist has server-side JavaScript that hides client-side code until activated with user interaction on the web interface.
 
 Additionally because File Transfer Protocol is used, access to the internet router to open ports maybe required.
 
