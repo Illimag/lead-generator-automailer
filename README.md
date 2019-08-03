@@ -44,7 +44,7 @@ Additionally because File Transfer Protocol is used, access to the internet rout
 
 This system requires File Locking functionality, to allow for multiple programs to write to one file.
 
-Currently it is implemented with portalocker, which is a cross-platform file locking dependency for Windows and Unix.
+Currently it is implemented with Portalocker, which is a cross-platform file locking dependency for Windows and Unix.
 
 This system heavily relies on Rotating Proxies, which is a service that changes the IP Address of the machine with each request to the Craigslist servers.
 
