@@ -42,4 +42,13 @@ With Mail for Good and AWS SES, we can send the emails.
 
 ## Limited Functionality
 
-The automailer function with UBOT STUDIO does not function.
+The automailer function with UBOT STUDIO does not fully function but simple construction of micro, a few additional hours.
+
+https://ubotstudio.com/site/ubot-studio-developer-edition/
+
+Optionally can rebuild with any desktop automation language/framework, but mouse click action is required because of Craigslist server-side JavaScript requires user interaction to display certain dynamic client-side data.
+
+### Disclaimer
+
+
+This software violates the Terms of Services of Craigslist and as so this system is not be used.

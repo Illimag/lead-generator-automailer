@@ -36,8 +36,14 @@ Combines the keyword filter and the FTP transfer.
 
 The ftp server is located on the Desktop-E1V0N4N machine.
 
-### Urls to Email
+## Limited Functionality
 
-Currently using Ubot Studio to get EMAILS from the URLS. 
-Need something that will click the button, because without it the <div></div> with the emails won't show. 
-Sever-side Javascript?
+The automailer function with UBOT STUDIO does not fully function but simple construction of micro, a few additional hours.
+
+https://ubotstudio.com/site/ubot-studio-developer-edition/
+
+Optionally can rebuild with any desktop automation language/framework, but mouse click action is required because of Craigslist server-side JavaScript requires user interaction to display certain dynamic client-side data.
+
+### Disclaimer
+
+This software violates the Terms of Services of Craigslist and as so this system is not be used.
