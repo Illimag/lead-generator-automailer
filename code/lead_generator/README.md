@@ -2,7 +2,7 @@
 
 ## Overview
 
-![lead-generator](lead-generator.png)
+![lead-generator](lead-02.jpg)
 
 ### Craiglist Scraper
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-![automailer](automailer.png)
+![automailer](lead-01.jpg)
 
 ## Startup Procedure
 
