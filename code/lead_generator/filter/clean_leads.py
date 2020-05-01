@@ -1,5 +1,24 @@
 # encoding=utf8
-# Copyright (C) 2019 Hillotech, LLC All Rights Reserved
+
+#    Copyright (C) Jae Min (John) Kim. All Rights Reserved
+#    This program is free software; you can redistribute it 
+#    and/r modify it under the terms of either the GNU General 
+#    Public License or the Artistic License. THIS SOFTWARE 
+#    IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+#    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED 
+#    TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS 
+#    FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
+#    SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE 
+#    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, 
+#    OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+#    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+#    DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+#    AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
+#    LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+#    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+#    EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
 import json
 import time
 from ftplib import FTP_TLS
@@ -14,8 +33,14 @@ leads_with_keywords = {}
 current_lead_number = 0
 current_url_number = 0
 
+# Watchdog runs the clean_leads.py with os.system.
+# Because the run_watchdog.py file is located in test_leads
+# When clean_leads.py is run
+# All files paths are relative to the run_watchdog.py file.
 
-with open("lead2.json", 'r') as json_file:
+
+
+with open("lead.json", 'r') as json_file:
     data = json.load(json_file)
     total_number_of_items_in_data = len(data)
     #print total_number_of_items_in_data
@@ -43,10 +68,11 @@ with open("lead2.json", 'r') as json_file:
                 leads_with_keywords[current_url_number].append({'title':this_title})
                 leads_with_keywords[current_url_number].append({'url':this_url})
                 current_url_number+=1
+                
                 break
 
         current_lead_number+=1
-with open('out2_lead.json', 'w') as outfile:  
+with open('out_lead.json', 'w') as outfile:  
     json.dump(leads_with_keywords, outfile)
 exit
 
@@ -54,11 +80,20 @@ ftp=FTP_TLS()
 ftp.set_debuglevel(2)
 ftp.connect('0000', 0000)
 ftp.sendcmd("USER user")
-ftp.sendcmd("PASS password")
-file = open('out2_lead.json','rb')     
-ftp.storbinary('STOR out2_lead.json', file) 
+ftp.sendcmd("PASS user")
+file = open('out_lead.json','rb')     
+ftp.storbinary('STOR out_lead.json', file) 
 file.close()  
 ftp.close()
 
-os.remove("lead2.json")
-os.remove("out2_lead.json")
+
+os.remove("lead.json")
+os.remove("out_lead.json")
+
+# Because another file is created which is out_lead.json
+# Watchdog runs the clean_leads script again.
+# But because there is no lead.json because spider.py hasen't
+# It throws a missing file error.
+# Currently this is fine for now.
+# But eventually a solution should be for Watchdog to watch 
+# For specific file.

@@ -1,12 +1,30 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Copyright (C) 2019 Hillotech, LLC All Rights Reserved
+
+#    Copyright (C) Jae Min (John) Kim. All Rights Reserved
+#    This program is free software; you can redistribute it 
+#    and/r modify it under the terms of either the GNU General 
+#    Public License or the Artistic License. THIS SOFTWARE 
+#    IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+#    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED 
+#    TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS 
+#    FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
+#    SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE 
+#    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, 
+#    OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+#    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+#    DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+#    AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
+#    LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+#    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+#    EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
 import os
 import logging
 import sys
 import time
 import subprocess
-
 
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
@@ -28,7 +46,7 @@ class MyEventHandler(FileSystemEventHandler):
         #files = os.listdir(cwd)  # Get all the files in that directory
         #print("Files in '%s': %s" % (cwd, files))
 
-        os.system('py -2 ../check_master.py')
+        os.system('py -2 ../check_master1.py')
 
         # Because another file is created which is out_lead.json
         # Watchdog runs the clean_leads script again.

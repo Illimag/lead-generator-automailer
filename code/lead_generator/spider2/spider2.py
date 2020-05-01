@@ -1,6 +1,24 @@
 # encoding=utf8
 # lead_generation
-# Copyright (C) 2019 Hillotech, LLC All Rights Reserved
+
+#    Copyright (C) Jae Min (John) Kim. All Rights Reserved
+#    This program is free software; you can redistribute it 
+#    and/r modify it under the terms of either the GNU General 
+#    Public License or the Artistic License. THIS SOFTWARE 
+#    IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+#    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED 
+#    TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS 
+#    FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
+#    SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE 
+#    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, 
+#    OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+#    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+#    DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+#    AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
+#    LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+#    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+#    EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -18,8 +36,10 @@ import time
 # from ghost import Ghost
 
 import random
+
 import os
 import os.path
+
 # ghost = Ghost()  
 
 # with ghost.start() as session:
@@ -32,7 +52,7 @@ while True:
     # Try to run script, if proxy doesn't connect first time there is an exception error
     try:
 
-        for cycle_count in open("spider1_cycle.txt"):
+        for cycle_count in open("spider2_cycle.txt"):
             current_cycle = cycle_count
             complete_url = "leads_cycle/cycle" + current_cycle + ".txt"
         exit
@@ -170,17 +190,17 @@ while True:
         # print "Total output =", i, ""
         # print ('The script took {0} second !'.format(time.time() - startTime))
 
-        if (os.path.isfile("test_leads/lead1.json") == True):
-            os.remove("test_leads/lead1.json")
-        if (os.path.isfile("test_leads/out1_lead.json") == True):
-            os.remove("test_leads/out1_lead.json")
+        if (os.path.isfile("test_leads/lead2.json") == True):
+            os.remove("test_leads/lead2.json")
+        if (os.path.isfile("test_leads/out2_lead.json") == True):
+            os.remove("test_leads/out2_lead.json")
 
-        with open("test_leads/lead1.json", 'w') as outfile:  
+        with open("test_leads/lead2.json", 'w') as outfile:  
             json.dump(leads, outfile)
         exit
 
         if current_cycle == "5":
-            with open('spider1_cycle.txt', 'w') as text_file:  
+            with open('spider2_cycle.txt', 'w') as text_file:  
                 text_file.write("0")
             exit
 
@@ -188,7 +208,7 @@ while True:
             string_to_int = int(current_cycle)
             string_to_int += 1
             int_to_string = str(string_to_int)
-            with open('spider1_cycle.txt', 'w') as text_file:  
+            with open('spider2_cycle.txt', 'w') as text_file:  
                 text_file.write(int_to_string)
             exit
 
