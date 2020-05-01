@@ -38,7 +38,7 @@ The ftp server is located on the Desktop-E1V0N4N machine.
 
 ## Limited Functionality
 
-The automailer function with UBOT STUDIO does not fully function but simple construction of micro, a few additional hours.
+The automailer function with UBOT STUDIO does not fully function but simple construction of macro, a few additional hours.
 
 https://ubotstudio.com/site/ubot-studio-developer-edition/
 
